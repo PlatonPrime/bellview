@@ -1,0 +1,680 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <link rel=apple-touch-icon href="R_Dashboard/logo1.png">
+        <link rel="shortcut icon" type="image/ico" href="R_Dashboard/logo1.png"/>
+        <meta name="description" content="au theme template">
+        <meta name="author" content="Deepak N Surya">
+        <meta name="keywords" content="au theme template">
+        <title>BellView | Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+        <style type="text/css">
+            body{
+                width:100%;
+                text-align:center;
+            }
+            img{
+                border:0;
+            }
+            #v{
+                width:300px;
+                height:350px;
+                 
+            }
+            #qr-canvas{
+                display:none;
+            }
+            
+            #mp1{
+                text-align:center;
+                font-size:20px;
+            }
+            #imghelp{
+                position:relative;
+                left:0px;
+                top:-160px;
+                z-index:100;
+                font:18px arial,sans-serif;
+                background:#f0f0f0;
+                margin-left:35px;
+                margin-right:35px;
+                padding-top:10px;
+                padding-bottom:10px;
+                border-radius:20px;
+            }
+            
+            
+            #result{
+                border: solid;
+                border-width: 0px;
+                padding:20px;
+                width:100%;
+            }
+            ul{
+                margin-bottom:0;
+                margin-right:40px;
+            }
+            li{
+                display:inline;
+                padding-right: 0.5em;
+                padding-left: 0.5em;
+                font-weight: bold;
+                border-right: 1px solid #333333;
+            }
+            li a{
+                text-decoration: none;
+                color: black;
+            }
+            #footer a{
+                color: black;
+            }
+            .tsel{
+                padding:0;
+            }
+            .log{
+                width:40%;
+            }
+            .container {
+                width: 100%;
+                background: #fff;
+                margin-left: 165px;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -o-border-radius: 10px;
+                -ms-border-radius: 10px; 
+                box-shadow: 0 6px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.2);
+            }
+            #preloader {
+                overflow: hidden;
+                background-color: #fff;
+                height: 100%;
+                left: 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 99999;
+            }
+            #preloader .preload-icons {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50px;
+                height: 50px;
+                z-index: 8;
+                background-color: transparent;
+                margin-top: -25px;
+                margin-left: -25px;
+                text-align: center;
+                line-height: 50px;
+            }
+            .preload-icons > img {
+                position: absolute;
+                top: 50%;
+                margin-top: -16px;
+                left: 50%;
+                margin-left: -16px;
+            }
+            .caviar-load {
+                -webkit-animation: 6000ms linear 0s normal none infinite running caviar-load;
+                animation: 6000ms linear 0s normal none infinite running caviar-load;
+                background: transparent none repeat scroll 0 0;
+                border-color: #ebebeb #ebebeb #ff0000;
+                border-radius: 50%;
+                border-style: solid;
+                border-width: 2px;
+                height: 70px;
+                position: relative;
+                width: 70px;
+                z-index: 9;
+                top: 50%;
+                left: 50%;
+                margin-top: -35px;
+                margin-left: -35px;
+            }
+            @-webkit-keyframes caviar-load {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes caviar-load {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+            #preloader .preload-icons .preload-1 {
+                -webkit-animation: 6000ms linear 0s normal none infinite running load-1;
+                animation: 6000ms linear 0s normal none infinite running load-1;
+            }
+            @-webkit-keyframes load-1 {
+                0% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                }
+                30% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                33.333% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                100% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+            }
+            @keyframes load-1 {
+                0% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                }
+                30% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                33.333% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                100% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+            }
+            #preloader .preload-icons .preload-2 {
+                -webkit-animation: 6000ms linear 0s normal none infinite running load-2;
+                animation: 6000ms linear 0s normal none infinite running load-2;
+            }
+            @-webkit-keyframes load-2 {
+                0% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                }
+                27% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                33.333% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                60% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                66.666% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                100% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+            }
+            @keyframes load-2 {
+                0% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                }
+                27% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                33.333% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                60% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                66.666% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                100% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+            }
+            #preloader .preload-icons .preload-3 {
+                -webkit-animation: 6000ms linear 0s normal none infinite running load-3;
+                animation: 6000ms linear 0s normal none infinite running load-3;
+            }
+            @-webkit-keyframes load-3 {
+                0% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                }
+                60% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                66.666% {
+                    opacity: 1;
+                    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                94% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                100% {
+                    opacity: 0;
+                    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+            }
+            @keyframes load-3 {
+                0% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                }
+                60% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+                66.666% {
+                    opacity: 1;
+                    -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                94% {
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+                }
+                100% {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+                }
+            }  
+            
+            
+            
+            @keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+   -webkit-animation: flickerAnimation 1s infinite;
+   -moz-animation: flickerAnimation 1s infinite;
+   -o-animation: flickerAnimation 1s infinite;
+    animation: flickerAnimation 1s infinite;
+}
+        </style>
+        <script type="text/javascript" src="llqrcode.js"></script>
+        <script>
+            var gCtx = null;
+            var gCanvas = null;
+            var c=0;
+            var stype=0;
+            var gUM=false;
+            var webkit=false;
+            var moz=false;
+            var v=null;
+
+            var imghtml='<div id="qrfile"><canvas id="out-canvas" ></canvas>'+
+                '<div id="imghelp">drag and drop a QRCode here'+
+                '<br>or select a file'+
+                '<input type="file" onchange="handleFiles(this.files)"/>'+
+                '</div>'+
+                '</div>';
+            var vidhtml = '<video id="v" autoplay></video>';
+            function dragenter(e) {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+            function dragover(e) {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+            function drop(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                var dt = e.dataTransfer;
+                var files = dt.files;
+                if(files.length>0)
+                {
+                    handleFiles(files);
+                }
+                else
+                    if(dt.getData('URL'))
+                    {
+                        qrcode.decode(dt.getData('URL'));
+                    }
+            }
+            function handleFiles(f)
+            {
+                var o=[];
+                for(var i =0;i<f.length;i++)
+                {
+                    var reader = new FileReader();
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                            gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+                            qrcode.decode(e.target.result);
+                        };
+                    })(f[i]);
+                    reader.readAsDataURL(f[i]);	
+                }
+            }
+            function initCanvas(w,h)
+            {
+                gCanvas = document.getElementById("qr-canvas");
+                gCanvas.style.width = w + "px";
+                gCanvas.style.height = h + "px";
+                gCanvas.width = w;
+                gCanvas.height = h;
+                gCtx = gCanvas.getContext("2d");
+                gCtx.clearRect(0, 0, w, h);
+            }
+            function captureToCanvas() {
+                if(stype!=1)
+                    return;
+                if(gUM)
+                {
+                    try{
+                        gCtx.drawImage(v,0,0);
+                        try{
+                            qrcode.decode();
+                        }
+                        catch(e){       
+                            console.log(e);
+                            setTimeout(captureToCanvas, 500);
+                        };
+                    }
+                    catch(e){       
+                        console.log(e);
+                        setTimeout(captureToCanvas, 500);
+                    };
+                }
+            }
+            function htmlEntities(str) {
+                return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            }
+            function read(a)
+            {
+                var html="<br>";
+				
+                var url="http://platon.co.in/bellview_updated/R_Dashboard/public/?ttid=Crea85&rrid=CreateTA6";
+                var check=a;
+                var trimmedString = check.slice(0, 100);
+                if(url==trimmedString){
+                    document.getElementById("preloader").style.display = 'inline';
+                    window.location = a;
+                }
+                else{
+                    alert("Invalid page");
+                }
+            }	
+            function isCanvasSupported(){
+                var elem = document.createElement('canvas');
+                return !!(elem.getContext && elem.getContext('2d'));
+            }
+            function success(stream) 
+            {
+                v.srcObject = stream;
+                v.play();
+                gUM=true;
+                setTimeout(captureToCanvas, 500);
+            }
+            function error(error)
+            {
+                gUM=false;
+                return;
+            }
+            function load()
+            {
+                !function(a){var b=/iPhone/i,c=/iPod/i,d=/iPad/i,e=/(?=.*\bAndroid\b)(?=.*\bMobile\b)/i,f=/Android/i,g=/(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,h=/(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,i=/IEMobile/i,j=/(?=.*\bWindows\b)(?=.*\bARM\b)/i,k=/BlackBerry/i,l=/BB10/i,m=/Opera Mini/i,n=/(CriOS|Chrome)(?=.*\bMobile\b)/i,o=/(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,p=new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)","i"),q=function(a,b){return a.test(b)},r=function(a){var r=a||navigator.userAgent,s=r.split("[FBAN");return"undefined"!=typeof s[1]&&(r=s[0]),s=r.split("Twitter"),"undefined"!=typeof s[1]&&(r=s[0]),this.apple={phone:q(b,r),ipod:q(c,r),tablet:!q(b,r)&&q(d,r),device:q(b,r)||q(c,r)||q(d,r)},this.amazon={phone:q(g,r),tablet:!q(g,r)&&q(h,r),device:q(g,r)||q(h,r)},this.android={phone:q(g,r)||q(e,r),tablet:!q(g,r)&&!q(e,r)&&(q(h,r)||q(f,r)),device:q(g,r)||q(h,r)||q(e,r)||q(f,r)},this.windows={phone:q(i,r),tablet:q(j,r),device:q(i,r)||q(j,r)},this.other={blackberry:q(k,r),blackberry10:q(l,r),opera:q(m,r),firefox:q(o,r),chrome:q(n,r),device:q(k,r)||q(l,r)||q(m,r)||q(o,r)||q(n,r)},this.seven_inch=q(p,r),this.any=this.apple.device||this.android.device||this.windows.device||this.other.device||this.seven_inch,this.phone=this.apple.phone||this.android.phone||this.windows.phone,this.tablet=this.apple.tablet||this.android.tablet||this.windows.tablet,"undefined"==typeof window?this:void 0},s=function(){var a=new r;return a.Class=r,a};"undefined"!=typeof module&&module.exports&&"undefined"==typeof window?module.exports=r:"undefined"!=typeof module&&module.exports&&"undefined"!=typeof window?module.exports=s():"function"==typeof define&&define.amd?define("isMobile",[],a.isMobile=s()):a.isMobile=s()}(this);
+                var devices=isMobile.any ? 'Mobile' : 'Not mobile';
+                if(devices=='Mobile'){
+                    if(isCanvasSupported() && window.File && window.FileReader)
+                    {
+                        initCanvas(800, 600);
+                        qrcode.callback = read;
+                        document.getElementById("mainbody").style.display="inline";
+                        setwebcam();
+                    }
+                    else
+                    {
+		document.getElementById("mainbody").style.display="inline";
+		document.getElementById("mainbody").innerHTML='<p id="mp1">QR code scanner for HTML5 capable browsers</p><br>'+
+        '<br><p id="mp2">sorry your browser is not supported</p><br><br>'+
+        '<p id="mp1">try <a href="http://www.mozilla.com/firefox"><img src="firefox.png"/></a> or <a href="http://chrome.google.com"><img src="chrome_logo.gif"/></a> or <a href="http://www.opera.com"><img src="Opera-logo.png"/></a></p>';
+	}
+        
+        
+    }
+    else{
+
+        window.location = "http://platon.co.in/bellview_updated/";    
+        
+    }
+}
+
+function setwebcam()
+{
+	
+	var options = true;
+	if(navigator.mediaDevices && navigator.mediaDevices.enumerateDevices)
+	{
+		try{
+			navigator.mediaDevices.enumerateDevices()
+			.then(function(devices) {
+			  devices.forEach(function(device) {
+				if (device.kind === 'videoinput') {
+				  options={'deviceId': {'exact':device.deviceId}, 'facingMode':'environment'} ;
+					
+				}
+				
+				console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
+			  });
+			  setwebcam2(options);
+			});
+		}
+		catch(e)
+		{
+			console.log(e);
+		}
+	}
+	else{
+		console.log("no navigator.mediaDevices.enumerateDevices" );
+		setwebcam2(options);
+	}
+	
+}
+
+function setwebcam2(options)
+{
+	console.log(options);
+	document.getElementById("result").innerHTML="- scanning -";
+    if(stype==1)
+    {
+        setTimeout(captureToCanvas, 500);    
+        return;
+    }
+    var n=navigator;
+    document.getElementById("outdiv").innerHTML = vidhtml;
+    v=document.getElementById("v");
+
+
+    if(n.mediaDevices.getUserMedia)
+    {
+        n.mediaDevices.getUserMedia({video: options, audio: false}).
+            then(function(stream){
+                success(stream);
+            }).catch(function(error){
+                error(error);
+            });
+    }
+    else if(n.getUserMedia)
+	{
+		webkit=true;
+        n.getUserMedia({video: options, audio: false}, success, error);
+	}
+    else if(n.webkitGetUserMedia)
+    {
+        webkit=true;
+        n.webkitGetUserMedia({video:options, audio: false}, success, error);
+    }
+
+    document.getElementById("qrimg").style.opacity=0.2;
+    document.getElementById("webcamimg").style.opacity=1.0;
+
+    stype=1;
+    setTimeout(captureToCanvas, 500);
+}
+
+function setimg()
+{
+	document.getElementById("result").innerHTML="";
+    if(stype==2)
+        return;
+    document.getElementById("outdiv").innerHTML = imghtml;
+    //document.getElementById("qrimg").src="qrimg.png";
+    //document.getElementById("webcamimg").src="webcam2.png";
+    document.getElementById("qrimg").style.opacity=1.0;
+    document.getElementById("webcamimg").style.opacity=0.2;
+    var qrfile = document.getElementById("qrfile");
+    qrfile.addEventListener("dragenter", dragenter, false);  
+    qrfile.addEventListener("dragover", dragover, false);  
+    qrfile.addEventListener("drop", drop, false);
+    stype=2;
+}
+</script>
+<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-108002404-1');
+</script>
+ <script>
+(function ($) {
+    'use strict';
+    var $window = $(window);
+
+    // Preloader Active Code
+    $window.on('load', function () {
+        $('#preloader').fadeOut('slow', function () {
+            $(this).remove();
+        });
+    });
+
+})(jQuery);
+        </script>
+        <script>
+        document.addEventListener('touchstart', onTouchStart, {passive: true});
+        
+        </script>
+    
+</head>
+
+<body >
+
+    
+ <!--    <div id="preloader" style="display: none">
+        <div class="caviar-load"></div>
+        <div class="preload-iconsbellview loading">
+            
+        </div> 
+    </div>  -->
+    <div id="preloader" style="display: none">
+        <div class="caviar-load"></div>
+        <div class="preload-icons">
+            <img class="preload-1" src="img/core-img/preload-1.png" alt="">
+            <img class="preload-2" src="img/core-img/preload-2.png" alt="">
+            <img class="preload-3" src="img/core-img/preload-3.png" alt="">
+        </div>
+    </div>
+    
+    
+    
+    <div>
+        <header style="position: fixed;
+  top: 0px;z-index: 999;justify-content: center;
+    align-items: center;
+  display: flex;background-color:white;-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+                   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);">
+            
+            
+   <div class="logo" >
+     <img src="R_Dashboard/images/white91.png" class="log" id="log"/>
+  </div> 
+</header>
+			
+			
+		</div>
+    
+    
+<div id="mainbody" >
+<table class="tsel" border="0" width="100%" style="margin-top: 25%;">
+<tr>
+    <td><h3 style="text-align: center;color: forestgreen">Scan for Menu</h3></td>
+    </tr>
+    <tr>
+<td valign="top" align="center" width="50%">
+<table class="tsel" border="0">
+<tr>
+<td><div id="webcamimg" class="container" ></div></td>
+<td><div id="qrimg"></div></td></tr>
+<tr><td colspan="2" align="center">
+<div id="outdiv">
+</div></td></tr>
+</table>
+</td>
+</tr>
+<tr ><td align="center" ><div style="margin-top: 15px;">
+<a class="btn btn-secondary rounded-0" href="http://platon.co.in/bellview_updated/qr-code-scan.html"><i class="fa fa-refresh" aria-hidden="true" ></i> Scan Again</a></div>
+</td></tr>
+
+<tr><td colspan="3" align="center">
+<div id="result" style="margin-top: -10px;color: forestgreen" class="animate-flicker"></div>
+</td></tr>
+</table>
+
+</div>&nbsp;
+
+
+
+<canvas id="qr-canvas" style="border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -o-border-radius: 10px;
+                -ms-border-radius: 10px; 
+                box-shadow: 0 6px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.2);"></canvas>
+<script type="text/javascript">load();</script>
+     <script src="load/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="load/active.js"></script>
+</body>
+
+</html>

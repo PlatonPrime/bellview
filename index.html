@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<title>BellView - Your Dish, Your Wish !!!</title>
+<link rel=apple-touch-icon href="webAssets/images/titlelogo.png">
+<link rel="shortcut icon" type="image/ico" href="webAssets/images/titlelogo.png"/>
+<meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name=author content="Deepak N Surya">
+<meta name=description content="Bellview aims at revolutionizing the way conventional restaurants work. With the growing rate of customers at the  restaurants and the prolonged waiting time, there has been a decline in the quality of service provided, even at the high-end diners. But with our contemporary model, such would be a thing of past.">
+<meta name=keywords content="Bellview, BellView, Restaurants, Deepak N Surya, Omkar kushal">
+<link rel=stylesheet href="webAssets/css/bootstrap.css">
+<link rel=stylesheet href="webAssets/css/animate.css">
+<link rel=stylesheet href="webAssets/css/owl.carousel.min.css">
+<link rel=stylesheet href="webAssets/css/magnific-popup.css">
+<link rel=stylesheet href="webAssets/css/aos.css">
+<link rel=stylesheet href="webAssets/css/bootstrap-datepicker.css">
+<link rel=stylesheet href="webAssets/css/jquery.timepicker.css">
+<link rel=stylesheet href="webAssets/css/classy-nav.min.css">
+<link rel=stylesheet href="webAssets/fonts/ionicons/css/ionicons.min.css">
+<link rel=stylesheet href="webAssets/fonts/fontawesome/css/font-awesome.min.css">
+<link rel=stylesheet href="webAssets/fonts/flaticon/font/flaticon.css">
+<link rel=stylesheet type="text/css" href="webAssets/slide/styles/main_styles.css">
+<link rel=stylesheet type="text/css" href="webAssets/slide/styles/responsive.css">
+<link rel=stylesheet href="webAssets/css/style.css">
+<link rel=stylesheet type="text/css" href="webAssets/slide/plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link href="https://fonts.googleapis.com/css?family=Alegreya|Anton|Cormorant+Garamond|Fira+Sans|Francois+One|Karla|Merienda|PT+Sans|PT+Sans+Caption|Patua+One|Playfair+Display|Quattrocento|Quicksand|Raleway|Righteous|Ubuntu" rel=stylesheet>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140680507-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-140680507-1');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-529GN5G');</script>
+<style>a:link{text-decoration:none;}
+.grtyoutube-popup{position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;}
+.grtyoutube-popup-content{margin-top:150px;width:95%;max-width:850px;margin-left:auto;margin-right:auto;position:relative;}
+.grtyoutube-popup-close{position:absolute;top:-30px;right:0;color:#FFF;font-size:25px;width:17px;height:17px;cursor:pointer;}
+.grtyoutube-iframe{width:100%;height:480px;}
+@media (max-width:767px){.grtyoutube-iframe{width:100%;height:350px;}
+}
+.grtyoutube-dark-theme{background:rgba(0,0,0, 0.85);}
+.grtyoutube-dark-theme .grtyoutube-popup-content{-webkit-box-shadow:0px 0px 8px 0px rgba(255,255,255,0.4);-moz-box-shadow:0px 0px 8px 0px rgba(255,255,255,0.4);box-shadow:0px 0px 8px 0px rgba(255,255,255,0.4);}
+.grtyoutube-dark-theme .grtyoutube-popup-close{background:url('icon-close-white.png') no-repeat;}
+.grtyoutube-light-theme{background:rgba(255,255,255, 0.85);}
+.grtyoutube-light-theme .grtyoutube-popup-content{-webkit-box-shadow:0px 0px 8px 0px rgba(0,0,0,0.4);-moz-box-shadow:0px 0px 8px 0px rgba(0,0,0,0.4);box-shadow:0px 0px 8px 0px rgba(0,0,0,0.4);}
+.grtyoutube-light-theme .grtyoutube-popup-close{background:url('icon-close-black.png') no-repeat;}
+.video-area{background:url("webAssets/images/bg12.jpg") left center no-repeat;background-size:cover;padding:50px 10px;position:relative;z-index:1}
+@media (min-width:750px){.video-area{padding:90px 10px}
+}
+@media (min-width:1000px){.video-area{padding:190px 10px}
+}
+.video-area::after{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(5,10,52,0.7);z-index:-1}
+.video-area h3{font-family:"Roboto Condensed",sans-serif;font-size:30px;color:#fff;font-weight:700;margin-bottom:20px}
+@media (min-width:1000px){.video-area h3{margin-bottom:50px}
+}
+@media (min-width:600px){.video-area h3{font-size:42px}
+} 
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    margin: 0 auto;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+
+.video-area p{font-size:15px;font-weight:300;color:#fff;margin-bottom:0;margin-top:30px}
+.section-margin--large{margin:50px 0}@media (min-width:1000px){.section-margin--large{margin:80px 0}}@media (min-width:1250px){.section-margin--large{margin:130px 0}}
+.video-play-button{position:relative;box-sizing:content-box;display:inline-block;width:32px;height:44px;border-radius:50%;padding:46px 8px 18px 28px;transform:scale(0.8)}.video-play-button img{width:24px;height:24px;position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%, -50%)}@media (min-width:800px){.video-play-button{transform:scale(1);margin-bottom:10px}}.video-play-button:before,.video-play-button:after{content:"";position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%);-moz-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);-o-transform:translate(-50%, -50%);transform:translate(-50%, -50%);display:block;width:100px;height:100px;border-radius:50%;background:linear-gradient(90deg, #fff 0%, #fff 100%)}.video-play-button:before{z-index:0;-webkit-animation:pulse-border 2000ms ease-out infinite;-moz-animation:pulse-border 2000ms ease-out infinite;-o-animation:pulse-border 2000ms ease-out infinite;animation:pulse-border 2000ms ease-out infinite}.video-play-button:after{z-index:1;-webkit-transition:all 200ms ease;-moz-transition:all 200ms ease;-o-transition:all 200ms ease;transition:all 200ms ease}.video-play-button span{display:block;position:relative;z-index:3;width:0;height:0;border-left:16px solid #99513a;border-top:8px solid transparent;border-bottom:8px solid transparent}.video-play-button:hover:after{background-color:#743d2c}@-webkit-keyframes pulse-border{0%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1);-o-transform:translate(-50%, -50%) translateZ(0) scale(1);transform:translate(-50%, -50%) translateZ(0) scale(1);opacity:0.7}100%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-o-transform:translate(-50%, -50%) translateZ(0) scale(1.5);transform:translate(-50%, -50%) translateZ(0) scale(1.5);opacity:0.1}}@-moz-keyframes pulse-border{0%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1);-o-transform:translate(-50%, -50%) translateZ(0) scale(1);transform:translate(-50%, -50%) translateZ(0) scale(1);opacity:0.7}100%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-o-transform:translate(-50%, -50%) translateZ(0) scale(1.5);transform:translate(-50%, -50%) translateZ(0) scale(1.5);opacity:0.1}}@-o-keyframes pulse-border{0%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1);-o-transform:translate(-50%, -50%) translateZ(0) scale(1);transform:translate(-50%, -50%) translateZ(0) scale(1);opacity:0.7}100%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-o-transform:translate(-50%, -50%) translateZ(0) scale(1.5);transform:translate(-50%, -50%) translateZ(0) scale(1.5);opacity:0.1}}@keyframes pulse-border{0%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1);-o-transform:translate(-50%, -50%) translateZ(0) scale(1);transform:translate(-50%, -50%) translateZ(0) scale(1);opacity:0.7}100%{-webkit-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-moz-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-ms-transform:translate(-50%, -50%) translateZ(0) scale(1.5);-o-transform:translate(-50%, -50%) translateZ(0) scale(1.5);transform:translate(-50%, -50%) translateZ(0) scale(1.5);opacity:0.1}}
+#bell{width:25% !important;}
+@media only screen and (max-width:39.375em){#bell{width:200% !important;}
+}
+p{color:#606060;font-size:14px;line-height:2;font-weight:500;}
+ul,
+ol{margin:0;}
+ul li,
+ol li{list-style:none;}
+.section-padding-100-0{padding-top:15px;padding-bottom:0;}
+.main-footer-area{background-color:#f1f1f1;}
+.main-footer-area .footer-widget .widget-title h6{font-size:14px;font-weight:500;margin-bottom:0;color:#7aa802;font-weight:700;text-transform:uppercase;}
+.main-footer-area .footer-widget .footer-social-info a{display:inline-block;color:#000;margin-right:15px;}
+.main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus{color:#ffffff;}
+.main-footer-area .footer-widget .useful-links li a{display:block;color:#000;margin-bottom:15px;font-size:14px;font-weight:500;}
+.main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus{color:#69bc5f;}
+.main-footer-area .footer-widget .gallery-list a{position:relative;z-index:1;@flex (0 0 30%);max-width:30%;margin-bottom:15px;cursor:zoom-in;}
+.main-footer-area .footer-widget .single-contact i{color:#7aa802;font-size:20px;margin-right:15px;padding-top:7px;}
+.main-footer-area .footer-widget .single-contact p{margin-bottom:0;}
+.bottom-footer-area{background-color:#141414;padding:10px 0;text-align:center;}
+.bottom-footer-area p{font-size:12px;margin-bottom:0;}
+.bottom-footer-area p a{color:#fff;font-size:12px;}
+.appointment-form{padding:50px 60px 70px 60px;}
+@media only screen and (max-width:39.375em){#headq{position:relative;display:inline-block;}
+.submit{background-color:#4CAF50;border:none;color:white;text-align:center;text-decoration:none;display:inline-block;font-size:40px;text-align:center;letter-spacing:2px;font-weight:bold;cursor:pointer;justify-content:center;border-radius:0px !important;width:100% !important;text-align:center;padding:25px 0px !important;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;-o-border-radius:10px;-ms-border-radius:10px;box-shadow:0 3px 20px 0 rgba(0, 0, 0, 0.1), 0 2px 30px 0 rgba(0, 0, 0, 0.1);}
+.submit:hover{background:#3a518d;}
+@media screen and (max-width:1024px){.container{margin:0 auto;}
+}
+@media screen and (max-width:768px){.container{width:calc(100% - 30px);max-width:100%;}
+}
+@media screen and (max-width:480px){.appointment-form{padding:50px 30px 50px 30px;}
+}
+#logq{width:40%;}
+.style-change{text-align:center;font-size:30px;}
+#secc{margin-top:20px;font-size:30px;}
+#menq{margin-top:8px;float:right;}
+.testimonial-area .testimonial-slider.owl-carousel img{width:100px;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%}
+}
+.container1{width:586px;background:#fff;margin-left:165px;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;-o-border-radius:10px;-ms-border-radius:10px;box-shadow:0 6px 50px 0 rgba(0, 0, 0, 0.2), 0 6px 50px 0 rgba(0, 0, 0, 0.2);}
+#spacing{padding-top:25px;}
+@media only screen and (max-width:39.375em){#spacing{padding-top:10px;}
+#cod, #op{border-radius:0px;width:auto;background:green;color:#fff;padding:12px 12px;font-size:12px;border:none;margin-left:8px;margin-right:8px;cursor:pointer;}
+body{background-color:white;background-image:url('images/dood1.png');background-repeat:repeat;background-size:200px;}
+}</style>
+<link rel=stylesheet type="text/css" href="webAssets/slider/css/style2.css"/>
+<script src="webAssets/slider/js/modernizr.custom.28468.js"></script>
+<noscript>
+<link rel=stylesheet type="text/css" href="webAssets/slider/css/nojs.css"/>
+</noscript>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-529GN5G" height=0 width=0 style="display:none;visibility:hidden"></iframe></noscript>
+
+<div id=preloader>
+<div class=caviar-load></div>
+<div class=preload-icons>
+<img class=preload-1 src="webAssets/img/core-img/preload-1.png" alt="">
+<img class=preload-2 src="webAssets/img/core-img/preload-2.png" alt="">
+<img class=preload-3 src="webAssets/img/core-img/preload-3.png" alt="">
+</div>
+</div>
+<div class=site-wrap style="background-color: #fff !important;">
+<header class=header>
+<div class="header_wrap d-flex flex-row align-items-center justify-content-center">
+<div class=logo><a href=index.html><img src="webAssets/images/bell.png" alt=BellView></a></div>
+<div class="hamburger ml-auto" id=hamburger><i class="fa fa-bars"></i></div>
+</div>
+</header>
+<header class=fixed_header>
+<div class="header_wrap d-flex flex-row align-items-center justify-content-center">
+<div class=logo><a href=index.html><img src="webAssets/images/bell.png" alt=BellView></a></div>
+<div class="hamburger ml-auto abc"><i class="fa fa-bars" aria-hidden=true></i></div>
+</div>
+</header>
+<div class=menu>
+<div class="menu_door door_left"></div>
+<div class="menu_door door_right"></div>
+<div class="menu_content d-flex flex-column align-items-center justify-content-center">
+<div class=menu_close>close</div>
+<div class=menu_nav_container>
+<nav class="menu_nav text-center">
+<ul>
+<li><a href=index.html style="font-weight: 700;color: #7aa802">home</a></li>
+<li><a href=about.html>about us</a></li>
+<li><a href=reservation.php>Reservation</a></li>
+<li><a href=blog.html>blog</a></li>
+<li><a href=contact.php>contact</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class=main-wrap style="background-color: #fff !important;">
+<div class=cover_1>
+<div class=img_bg id=main>
+<div class=container>
+<div class="row align-items-center">
+<div class=col-md-6 data-aos=fade-up>
+<img src="webAssets/images/plates.png" width=800px id=plate alt="BellView Tag"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="padding-top: 150px !important;padding-bottom: 150px !important; background-color: #fff !important;background: url(webAssets/images/clip/b2.png) left bottom no-repeat; background-size: 250px; !important">
+<div class=container>
+<div class="row justify-content-center mb-5" data-aos=fade-up>
+<div class="col-md-8  text-center">
+<h2 class=mb-3 style="font-family: 'Merienda', cursive;letter-spacing: 3px ">Why Choose Us ?</h2>
+</div>
+</div>
+<div class=row>
+<div class="col-12 col-sm-6 col-lg-6" s data-aos=fade-up data-aos-delay=200 style="padding-top: 10px;padding-bottom: 10px">
+<img src="webAssets/img/img_2.jpg" alt="Image placeholder" class="img-fluid rounded">
+</div>
+<div class="col-12 col-sm-6 col-lg-6" data-aos=fade-up data-aos-delay=300 style="padding-top: 10px;padding-bottom: 10px">
+<div class=accordion id=accordion style="text-align: justify">
+<div class=accordion-item>
+<h3 class=mb-0>
+<a class="btn-block p-3" data-toggle=collapse href="#collapseOne" role=button aria-expanded=true aria-controls=collapseOne style="font-size: 18px;letter-spacing: 1px;">Quality Cuisine <span class=icon style="font-size: 18px;"></span></a>
+</h3>
+<div id=collapseOne class="collapse show" aria-labelledby=headingOne data-parent="#accordion">
+<div class=p-3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">You are what you eat and we make sure it's nothing but the best. BellView offers cuisines from all across the globe at its partner restaurants so you don't run out of options when exploring great taste. We make sure that you get the best of what your locality has to offer. From South Indian to Chinese and Italian to every cuisine that is there in the world, we provide you with the list of the menu right on your smartphone screen; accompanied with not only prices but the complete nutritional benefits, so you can choose what is right for your body and go easy on your pocket.</p>
+</div>
+</div>
+</div>
+<div class=accordion-item>
+<h3 class=mb-0>
+<a class="btn-block p-3" data-toggle=collapse href="#collapseTwo" role=button aria-expanded=false aria-controls=collapseTwo style="font-size: 18px;letter-spacing: 1px;">Fresh Food <span class=icon style="font-size: 18px;"></span></a>
+</h3>
+<div id=collapseTwo class=collapse aria-labelledby=headingOne data-parent="#accordion">
+<div class=p-3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">Are you certain that the food you order is fresh? Well, at Bellview, you are. From plucking the recently-harvested vegetables and freshly carve up meat to dressing the main course and sweetening your desserts, our team ensure that the food you're served is up to the mark by gingerly selecting our partners. We employ routined procedures to test the quality of stock as well as the finished product because there is no compromise when it comes to eating healthy. </p>
+</div>
+</div>
+</div>
+<div class=accordion-item>
+<h3 class=mb-0>
+<a class="btn-block p-3" data-toggle=collapse href="#collapseThree" role=button aria-expanded=false aria-controls=collapseThree style="font-size: 18px;letter-spacing: 1px;">Friendly Staff <span class=icon style="font-size: 18px;"></span></a>
+</h3>
+<div id=collapseThree class=collapse aria-labelledby=headingOne data-parent="#accordion">
+<div class=p-3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">Skill and amiability are the qualities to possess and we have a staff who excel in both. From creating a warm-hearted environment to providing customer support, we got it all covered. BellView introduces the modern era of Chef-Assistants who provide you with your quality cuisine in lesser time, which was next to impossible in the conventional waiter approach. While our QR-codes get your orders as soon as you enter, our Chef-Assistants will provide you with the chef-created deliciousness in no time. In case you need a hand with the technology, they come equipped with tech support for added benefits.</p>
+</div>
+</div>
+</div>
+<div class=accordion-item>
+<h3 class=mb-0>
+<a class="btn-block p-3" data-toggle=collapse href="#collapseFour" role=button aria-expanded=false aria-controls=collapseFour style="font-size: 18px;letter-spacing: 1px;">Go Queue-less<span class=icon style="font-size: 18px;"></span></a>
+</h3>
+<div id=collapseFour class=collapse aria-labelledby=headingOne data-parent="#accordion">
+<div class=p-3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">Forgot to make reservations? Tired of waiting for the waiter to make an order? We've all been there but now, we decide to break through. Bellview presents an innovative way of hotel management, where waiting in queues is a thing of past. Our new and improved model introduces QR-codes which you can scan upon entering the restaurant and book a table within the premises of your favourite restaurant. Our enhanced menu software will show you the dishes with availability, prices and nutritional values while you can make the payment straight from the table.
+<br>It's new. It's convenient. It saves time.
+</p>
+</div>
+</div>
+</div>
+<div class=accordion-item>
+<h3 class=mb-0>
+<a class="btn-block p-3" data-toggle=collapse href="#collapseFive" role=button aria-expanded=false aria-controls=collapseFive style="font-size: 18px;letter-spacing: 1px;">BellView Freebies<span class=icon style="font-size: 18px;"></span></a>
+</h3>
+<div id=collapseFive class=collapse aria-labelledby=headingOne data-parent="#accordion">
+<div class=p-3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">At BellView, we care about our customers. And that's why with every meal you eat, we are giving you a chance to get freebies. Every time you scan a QR-code at one of our partner restaurants, you get to avail a free dish or reward points which you can collect to win exclusive deals at BellView associates. We are not done here, because every time you dine with us, we give you access to BellCodes, the enveloped QR-codes you can use to win high-discounts and benefits at our partner establishments. BellCodes can also be traded with friends and relatives for shared benefits.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=classes style="background-color:rgba(241, 241, 241, 0.5) !important;background: url(webAssets/images/clip/b4.png) right bottom no-repeat, url(webAssets/images/clip/b1.png) left top no-repeat; background-size: 250px; !important">
+<div class=container-fluid>
+<div class=row>
+<div class=col>
+<div class="section_title_container text-center" data-aos=fade-up>
+<h2 class=mb-4 style="font-family: 'Merienda', cursive;letter-spacing: 3px ">Our Services</h2>
+</div>
+<div class=classes_slider_container style="background-color:#fff; border-radius: 2px; border: 2px solid rgba(122, 168, 2, 1);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<div class="owl-carousel owl-theme classes_slider">
+<div>
+<div class=classes_slide_wrap>
+<div class=row>
+<div class="col-12 col-sm-12 col-lg-4">
+<div class=text-center>
+<div class=class_image><img src="webAssets/images/services/ser.png" alt="SCAN QR CODE"></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7">
+<div class=text-center>
+<div class=classes_title> <h3 style="font-family: 'Francois One', sans-serif;">SCAN QR CODE</h3></div>
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Firstly, to get started on our food journey walk-in to our restaurant! Pick your favourite spot and just scan the QR code kept on your table. Now, you are officially on board! Yes, you read it right! By now, you would realize that our service starts right from the time you step in.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class=classes_slide_wrap>
+<div class=row>
+<div class="col-12 col-sm-12 col-lg-4" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=class_image><img src="webAssets/services/services2.png" alt="menu and order"></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=classes_title> <h3 style="font-family: 'Francois One', sans-serif;">menu and order</h3></div>
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Now that you have scanned your QR code, get the mouth-watering menu of Bellview right on your phone! Worried about your health and calories? No worries! We have that sorted for you. Each dish you see on our Bellview menu will have every detail of what goes into it for crafting it.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class=classes_slide_wrap>
+<div class=row>
+<div class="col-12 col-sm-12 col-lg-4" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=class_image><img src="webAssets/services/services3.jpg" alt="enjoy your meal"></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=classes_title> <h3 style="font-family: 'Francois One', sans-serif;">enjoy your meal</h3></div>
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">While you have a splendid time, our chefs will prepare your delicious meal and send it across to your table in no time! You can now enjoy your healthy, tasty and scrumptious meal! Want to order more of our dishes? Go on, scan the code again! Your wish, your dish!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class=classes_slide_wrap>
+<div class=row>
+<div class="col-12 col-sm-12 col-lg-4" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=class_image><img src="webAssets/services/services4.gif" alt="CONVENIENT PAYMENT"></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=classes_title> <h3 style="font-family: 'Francois One', sans-serif;">CONVENIENT PAYMENT</h3></div>
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Now, on to the payments part, we assure you that Bellview is the most pocket-friendly restaurant ever! We provide you with hassle-free payment options! That's payment done in seconds - it's totally automated and digitized. Secure payments can be done right from your phone. You don't have to fish your purses or wallets for change anymore. Easy isn't it?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class=classes_slide_wrap>
+<div class=row>
+<div class="col-12 col-sm-12 col-lg-4" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=class_image><img src="webAssets/services/services5.png" alt=FEEDBACKS></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=classes_title> <h3 style="font-family: 'Francois One', sans-serif;">FEEDBACKS</h3></div>
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">We would love to hear from you. We would like to know how you felt about your revolutionized dining experience. Your valuable feedbacks matter the most so that each restaurant can help you get better experiences each time! We want to give you only the best of everything. We are open to any suggestions leading towards a constructive upgrade.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class=classes_slide_wrap>
+<div class=row>
+<div class="col-12 col-sm-12 col-lg-4" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=class_image><img src="webAssets/services/services6.png" alt="COMPLEMENTARY GOODIES"></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" style="padding-top: 10px;padding-bottom: 10px">
+<div class=text-center>
+<div class=classes_title> <h3 style="font-family: 'Francois One', sans-serif;">COMPLEMENTARY GOODIES</h3></div>
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">It's not over yet! We would love to pamper you with our complimentary goodies made just for you! Apart from all these services we offer you two types of complimentary goodies - value points and complementary dishes. Not just that, but we also offer you our Bellview card! These Bellview cards can accumulate all your value points and save them.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+<div class=section style="background-color: #fff !important;;background:  url(webAssets/images/clip/b3.png) right top no-repeat; background-size: 250px; !important">
+<div class=container>
+<div class="row justify-content-center">
+<div class="col-md-7 text-center" data-aos=fade-up>
+<h2 class=mb-4 style="font-family: 'Merienda', cursive;letter-spacing: 3px ">Step to Enter in</h2>
+</div>
+</div>
+</div>
+<div class="section pt-0 pb-0" style="background-color:#fff; border-radius: 2px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<div class="menus d-flex bg-light" style="width: 100%; text-align: justify">
+<div class="d-flex item">
+<div class=image style="background-image: url(webAssets/img/img_1.jpg);" data-aos=fade></div>
+<div class=text>
+<h3 style=font-weight:600>Step 1</h3>
+
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Scans the QR code for the menu. Using the menu on the phone.</p>
+<!-- Button trigger modal -->
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter">
+ Know More
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">STEP 1</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style=" height: 300px;
+    overflow-y: auto; line-height: 300px;">
+<div style=" display: inline-block;
+  vertical-align: middle;
+  line-height: normal;">
+   <div class=row >
+<div class="col-12 col-sm-12 col-lg-5" >
+<div class=text-center >
+<div class=class_image><img src="webAssets/img/img_1.jpg" alt="COMPLEMENTARY GOODIES"></div>
+<div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">Scans the QR code for the menu. Using the menu on the phone.</h5></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" >
+<div class=text-center>
+
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Firstly, to get started on our food journey walk-in to our restaurant! Pick your favourite spot and just scan the QR code kept on your table. Now, you are officially on board! Yes, you read it right! By now, you would realize that our service starts right from the time you step in.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" style="display: flex;justify-content:center;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex item">
+<div class="image order-2 order-md-1" style="background-image: url(webAssets/img/img_2.jpg);" data-aos=fade></div>
+<div class="text order-1 order-md-2">
+<h3 style=font-weight:600>Step 2</h3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">The chef prepares the dishes and the assistant will
+deliver them to the table.</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter1">
+ Know More
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter1Title" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">STEP 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style=" height: 300px;overflow-y: auto; line-height: 300px;">
+                    <div style=" display: inline-block;vertical-align: middle;line-height: normal;">
+                        <div class=row >
+                            <div class="col-12 col-sm-12 col-lg-5" >
+                                <div class=text-center >
+                                    <div class=class_image><img src="webAssets/img/img_2.jpg" alt="COMPLEMENTARY GOODIES"></div>
+                                    <div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">The chef prepares the dishes and the assistant will deliver them to the table.</h5></div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-7" >
+                                <div class=text-center>
+                                    <div class=classes_text>
+                                        <p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Now that you have scanned your QR code, get the mouth-watering menu of Bellview right on your phone! Worried about your health and calories? No worries! We have that sorted for you. Each dish you see on our Bellview menu will have every detail of what goes into it for crafting it. You will know its nutritional values, ingredients and also the calorie content plus health benefits. At Bellview, we assure you health meets taste. Now all you have to do is pick whatever dish you would love to indulge in and sit back and place your order. Have a small chat with your loved ones and enjoy the ambience while we send your choices directly to our renowned chefs!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex;justify-content:center;">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="d-flex item">
+<div class="image order-1 order-md-2 order-lg-2 order-xl-1" style="background-image: url(webAssets/img/img_3.jpg);" data-aos=fade data-aos-delay=200></div>
+<div class="text order-2 order-md-1 order-lg-1 order-xl-2">
+<h3 style=font-weight:600>Step 3</h3>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">The customer enjoys his food, pays the bill and
+gets points for the delicious meal.</p>
+<button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter2">
+ Know More
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter2Title" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">STEP 3</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style=" height: 300px;
+    overflow-y: auto; line-height: 300px;">
+<div style=" display: inline-block;
+  vertical-align: middle;
+  line-height: normal;">
+   <div class=row >
+<div class="col-12 col-sm-12 col-lg-5" >
+<div class=text-center >
+<div class=class_image><img src="webAssets/img/img_3.jpg" alt="COMPLEMENTARY GOODIES"></div>
+<div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">The customer enjoys his food, pays the bill and
+gets points for the delicious meal.</h5></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" >
+<div class=text-center>
+
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">You are what you eat and we make sure it's nothing but the best. BellView offers cuisines from all across the globe at its partner restaurants so you don't run out of options when exploring great taste. We make sure that you get the best of what your locality has to offer. From South Indian to Chinese and Italian to every cuisine that is there in the world, we provide you with the list of the menu right on your smartphone screen; accompanied with not only prices but the complete nutritional benefits, so you can choose what is right for your body and go easy on your pocket.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" style="display: flex;justify-content:center;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter3Title" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">COMPLEMENTARY FREEBIES</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style=" height: 300px;
+    overflow-y: auto; line-height: 300px;">
+<div style=" display: inline-block;
+  vertical-align: middle;
+  line-height: normal;">
+   <div class=row >
+<div class="col-12 col-sm-12 col-lg-5" >
+<div class=text-center >
+<div class=class_image><img src="webAssets/img/img_2.jpg" alt="COMPLEMENTARY GOODIES"></div>
+<div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">BellView offers a range of freebies to its customers, so you donâ€™t have to worry when it comes to enjoying a good meal. </h5></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" >
+<div class=text-center>
+
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Every time you enter a restaurant in our partner program and scan a QR-code, you are automatically signed up for our exclusive benefits. You have a chance of winning a dish, absolutely free of cost or availing reward points, that you can collect and win lucrative deals and offers to our associates.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" style="display: flex;justify-content:center;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter4Title" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">COMPLEMENTARY QR CARD</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style=" height: 300px;
+    overflow-y: auto; line-height: 300px;">
+<div style=" display: inline-block;
+  vertical-align: middle;
+  line-height: normal;">
+   <div class=row >
+<div class="col-12 col-sm-12 col-lg-5" >
+<div class=text-center >
+<div class=class_image><img src="webAssets/img/img_2.jpg" alt="COMPLEMENTARY GOODIES"></div>
+<div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">Our unique approach makes sure that you never run out of your food adventures when feasting with us. </h5></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" >
+<div class=text-center>
+
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Thatâ€™s not all because, on every visit, we gift you Bellcodes, equipped with heavily discounted deals at our collaborators to make your experience worthwhile. Each BellCode is a unique QR-Code to redeem rebates and amazing offers to other eateries in our chain of collaborations. The BellCodes can be traded with friends and relatives, making it a go-to gift or simply a mutual benefit.<br/>
+Our unique approach makes sure that you never run out of your food adventures when feasting with us. Our well-planned business model covers cuisines not only from every corner of India but from the countries all around the world, creating an exploring adventure in food paradise.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" style="display: flex;justify-content:center;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter5Title" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">SERVICES</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style=" height: 300px;
+    overflow-y: auto; line-height: 300px;">
+<div style=" display: inline-block;
+  vertical-align: middle;
+  line-height: normal;">
+   <div class=row >
+<div class="col-12 col-sm-12 col-lg-5" >
+<div class=text-center >
+<div class=class_image><img src="webAssets/img/img_2.jpg" alt="COMPLEMENTARY GOODIES"></div>
+<div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">Innovation is an ingredient for success. So, at BellView, we make sure to have plenty of it.</h5></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" >
+<div class=text-center>
+
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">Our revolutionized outlook for conventional restaurants has led to the origin of a highly-optimized workforce, known as Chef-Assistants.<br/>
+While our QR-codes automatically connects you to the menu, takes your order and receive credit using a secure payment gateway, our Chef-Assistants delivers your plate of chef-created deliciousness in no time, thus significantly reducing the waiting period between you and your dream meal.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" style="display: flex;justify-content:center;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter6Title" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+  <div class="modal-dialog modal-dialog-centered modal-lg vertical-align-center" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Francois One', sans-serif;">QR POINTS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style=" height: 300px;
+    overflow-y: auto; line-height: 300px;">
+<div style=" display: inline-block;
+  vertical-align: middle;
+  line-height: normal;">
+   <div class=row >
+<div class="col-12 col-sm-12 col-lg-5" >
+<div class=text-center >
+<div class=class_image><img src="webAssets/img/img_2.jpg" alt="COMPLEMENTARY GOODIES"></div>
+<div class=classes_title> <h5 style="font-family: 'Francois One', sans-serif;">We would love to pamper you with our complimentary goodies made just for you! Apart from all these services we offer you two types of complimentary goodies - value points and complementary dishes.</h5></div>
+</div>
+</div>
+<div class="col-12 col-sm-12 col-lg-7" >
+<div class=text-center>
+
+<div class=classes_text>
+<p style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;font-size: 16px;">It's not over yet! We would love to pamper you with our complimentary goodies made just for you! Apart from all these services we offer you two types of complimentary goodies - value points and complementary dishes. Not just that, but we also offer you our Bellview card! These Bellview cards can accumulate all your value points and save them.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" style="display: flex;justify-content:center;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<section class="site-section " id=section-work style="padding-top: 20px;padding-bottom: 20px; background-color:rgba(241, 241, 241, 0.5) !important;">
+<section class="video-area section-margin--large" role=img aria-label=Welcome>
+<div class=container>
+<div class="row justify-content-center align-items-center flex-column text-center">
+<h3 style="font-family: 'Merienda', cursive;">View Our Work</h3>
+<a id=play-home-video class="video-play-button">
+<img src="webAssets/images/play-icon.png" alt=Play>
+</a>
+<p>05:35</p>
+</div>
+</div>
+</section>
+</section>
+<div class="site-half-wrap d-block d-lg-flex" style="padding-top: 20px; background-color: #fff !important;">
+<div class=block-half data-aos=fade style="-webkit-box-shadow: 0px -2px 3px rgba(122, 168, 2, 0.3);">
+<div class=image-bg-fullwidth style="background-image: url(webAssets/images/footer/image/i11.jpg);"></div>
+<div class="half d-block d-lg-flex">
+<div class=text>
+<h2 class=mb-4 style="font-family: 'Merienda', cursive;letter-spacing: 3px;font-size: 25px !important; ">Complementary Freebies</h2>
+<p class=mb-4 style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">BellView offers a range of freebies to its customers, so you don’t have to worry when it comes to enjoying a good meal. Every time you enter a restaurant in our scan a QR-code, you are automatically signed up for our exclusive benefits.</p>
+<button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter3">
+ Know More
+</button>
+
+</div>
+<div class=image style="background-image: url(webAssets/images/footer/image/i12.jpg);"></div>
+</div>
+</div>
+<div class=block-half data-aos=fade style="-webkit-box-shadow: 0px -2px 3px rgba(122, 168, 2, 0.3);">
+<div class="half d-block d-lg-flex">
+<div class=text>
+<h2 class=mb-4 style="font-family: 'Merienda', cursive;letter-spacing: 3px;font-size: 25px !important; ">Complementary QR Card</h2>
+<p class=mb-4 style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">Our unique approach makes sure that you never run out of your food adventures when feasting with us. Our well-planned business model covers cuisines not only from every corner of India but from the countries all around the world.</p>
+<button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter4">
+ Know More
+</button>
+</div>
+<div class=image style="background-image: url(webAssets/images/footer/image/i14.jpg);"></div>
+</div>
+<div class=image-bg-fullwidth style="background-image: url(webAssets/images/footer/image/i19.jpg);background-position: center"></div>
+</div>
+</div>
+<div class="site-half-wrap d-block d-lg-flex" style="padding-bottom: 20px;background-color: #fff !important;">
+<div class=block-half data-aos=fade>
+<div class=image-bg-fullwidth style="background-image: url(webAssets/images/footer/image/i17.jpg);"></div>
+<div class="half d-block d-lg-flex">
+<div class=text>
+<h2 class=mb-4 style="font-family: 'Merienda', cursive;letter-spacing: 3px;font-size: 25px !important; ">Services</h2>
+<p class=mb-4 style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">Innovation is an ingredient for success. So, at BellView, we make sure to have plenty of it. Our revolutionized outlook for conventional restaurants has led to the origin of a highly-optimized workforce, known as Chef-Assistants.</p>
+<button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter5">
+ Know More
+</button>
+</div>
+<div class=image style="background-image: url(webAssets/images/footer/image/i21.jpg);"></div>
+</div>
+</div>
+<div class=block-half data-aos=fade>
+<div class="half d-block d-lg-flex">
+<div class=text>
+<h2 class=mb-4 style="font-family: 'Merienda', cursive;letter-spacing: 3px;font-size: 25px !important;">QR Points</h2>
+<p class=mb-4 style="font-family: 'Fira Sans', sans-serif;letter-spacing: 0.5px;">We would love to pamper you with our complimentary goodies made just for you! Apart from all these services we offer you two types of complimentary goodies - value points and complementary dishes. </p><button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter6">
+ Know More
+</button>
+</div>
+<div class=image style="background-image: url(webAssets/images/footer/image/i22.jpg);"></div>
+</div>
+<div class=image-bg-fullwidth style="background-image: url(webAssets/images/footer/image/i2.jpg);"></div>
+</div>
+</div>
+<div style="padding: 25px"></div>
+</div>
+</div>
+<footer class="pb-50  pt-70 pos-relative" style="width: 100%;font-family: 'Ubuntu', sans-serif !important; ">
+<div class="pos-top triangle-bottom"></div>
+<div class=container-fluid>
+<a href=index.html><img src="webAssets/images/bell.png" alt=BellView class=logo12></a>
+<div class=pt-30>
+<p class=underline-secondary><i class=ion-ios-location style="font-size: 25px; !important;color: #fff !important;"></i></p>
+<p style="color: #fff;font-size: 20px;letter-spacing: 2px;">#217, AGB Layout, Hesaragatta Main Road, Bengaluru 560090</p>
+</div>
+<div class=pt-30>
+<p class=underline-secondary><i class="
+ ion-ios-telephone" style="font-size: 25px; !important;color: #fff !important;"></i></p>
+<a href="tel:+91 7996993019" style="color: #fff;font-size: 20px;letter-spacing: 2px;">+91 7892698347 </a>| <a href="tel:+91 7996993019" style="color: #fff;font-size: 20px;letter-spacing: 2px;"> +91 7892698347 </a>
+</div>
+<div class=pt-30>
+<p class=underline-secondary><i class="
+  ion-ios-email" style="font-size: 25px; !important;color: #fff !important;"></i></p>
+<a href="mailto:kushal@platonprime.com" style="color: #fff;font-size: 20px;letter-spacing: 2px;"> <i class="
+  ion-ios-email" style="font-size: 25px; !important;color: #fff !important;"></i> kushal</a> | <a href="mailto:vybhavnag@platonprime.com" style="color: #fff;font-size: 20px;letter-spacing: 2px;"> <i class="
+  ion-ios-email" style="font-size: 25px; !important;color: #fff !important;"></i> Vybhav</a>
+</div>
+<ul class="icon mt-30">
+<li class=list><a href="https://www.facebook.com/bellviewofficial/" target=_blank><i class=ion-social-facebook style="font-size: 30px; !important;color: #fff !important;"></i></a></li>
+<li class=list><a href="https://twitter.com/bellview_global" target=_blank><i class=ion-social-twitter style="font-size: 30px; !important;color: #fff !important;"></i></a></li>
+<li class=list><a href="https://www.linkedin.com/in/bellviewglobal" target=_blank><i class=ion-social-linkedin style="font-size: 30px; !important;color: #fff !important;"></i></a></li>
+<li class=list><a href="https://www.instagram.com/bellview_official/" target=_blank><i class=ion-social-instagram style="font-size: 30px; !important;color: #fff !important;"></i></a></li>
+</ul>
+<p class="color-light font-9 " style="color: #fff;font-size: 15px;letter-spacing: 2px;">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p><p>Powered by <a href="https://platonprime.com" target=_blank style="color: #fff;font-size: 20px;letter-spacing: 2px;font-weight: 700;">Platon</a>
+</p>
+<p class="color-light font-9 " style="color: #fff;font-size: 15px;letter-spacing: 2px;">
+<p class="color-light font-9 " style="color: #fff;font-size: 15px;letter-spacing: 2px;">
+PLATON SERVICES PRIVATE LIMITED</p>
+</div>
+</footer>
+<script src="webAssets/js/jquery-3.2.1.min.js"></script>
+<script src="webAssets/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="webAssets/js/popper.min.js"></script>
+<script src="webAssets/js/bootstrap.min.js"></script>
+<script src="webAssets/js/owl.carousel.min.js"></script>
+<script src="webAssets/js/jquery.waypoints.min.js"></script>
+<script src="webAssets/js/bootstrap-datepicker.js"></script>
+<script src="webAssets/js/jquery.timepicker.min.js"></script>
+<script src="webAssets/js/jquery.stellar.min.js"></script>
+<script src="webAssets/js/aos.js"></script>
+<script src="webAssets/js/main.js"></script>
+<script src=webAssets/js/grt-youtube-popup.js></script>
+<script>$(".youtube-link").grtyoutube({autoPlay:true,theme:"dark"});</script>
+<script src="webAssets/slide/plugins/greensock/TweenMax.min.js"></script>
+<script src="webAssets/slide/plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+<script src="webAssets/slide/js/custom.js"></script>
+<script src="webAssets/css/js/index.js"></script>
+<script src="webAssets/load/others/plugins.js"></script>
+<script src="webAssets/load/active.js"></script>
+</body>
+</html>

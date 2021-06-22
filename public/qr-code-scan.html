@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="QR Code scanner" />
+  <meta name="keywords" content="qrcode,qr code,scanner,barcode,javascript" />
+  <meta name="language" content="English" />
+ 
+  <meta name="Revisit-After" content="1 Days"/>
+  <meta name="robots" content="index, follow"/>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BellView | QR Scan</title>
+<link rel=apple-touch-icon href="assets/images/titlelogo.png">
+        <link rel="shortcut icon" type="image/ico" href="assets/images/titlelogo.png"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+body{
+    width:100%;
+    text-align:center;
+}
+.navbar {
+    border-bottom: 1px solid #ccc!important;
+}
+img{
+    border:0;
+}
+#main{
+    margin: 15px auto;
+    background:white;
+    overflow: auto;
+	width: 100%;
+}
+#header{
+    background:white;
+    margin-bottom:15px;
+}
+#mainbody{
+    background: white;
+    width:100%;
+	display:none;
+}
+#footer{
+    background:white;
+}
+#v{
+    width:320px;
+    height:240px;
+}
+#qr-canvas{
+    display:none;
+}
+#qrfile{
+    width:320px;
+    height:240px;
+}
+#mp1{
+    text-align:center;
+    font-size:20px;
+}
+#imghelp{
+    position:relative;
+    left:0px;
+    top:-160px;
+    z-index:100;
+    font:18px arial,sans-serif;
+    background:#f0f0f0;
+	margin-left:35px;
+	margin-right:35px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius:20px;
+}
+.selector{
+    margin:0;
+    padding:0;
+    cursor:pointer;
+    margin-bottom:-5px;
+}
+#outdiv
+{
+    width:320px;
+    height:240px;
+	border: solid;
+	border-width: 0px;
+}
+#result{
+    border: solid;
+	border-width: 0px;
+	padding:20px;
+	width:100%;
+}
+
+ul{
+    margin-bottom:0;
+    margin-right:40px;
+}
+li{
+    display:inline;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    font-weight: bold;
+    border-right: 1px solid #333333;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+#footer a{
+	color: black;
+}
+.tsel{
+    padding:0;
+}
+
+</style>
+
+<script type="text/javascript" src="assets/caro/js/llqrcode.js"></script>
+
+
+<script>
+	var gCtx = null;
+var gCanvas = null;
+var c=0;
+var stype=0;
+var gUM=false;
+var webkit=false;
+var moz=false;
+var v=null;
+
+var imghtml='<div id="qrfile"><canvas id="out-canvas" width="320" height="240"></canvas>'+
+    '<div id="imghelp">drag and drop a QRCode here'+
+	'<br>or select a file'+
+	'<input type="file" onchange="handleFiles(this.files)"/>'+
+	'</div>'+
+'</div>';
+
+var vidhtml = '<video id="v" autoplay></video>';
+
+function dragenter(e) {
+  e.stopPropagation();
+  e.preventDefault();
+}
+
+function dragover(e) {
+  e.stopPropagation();
+  e.preventDefault();
+}
+function drop(e) {
+  e.stopPropagation();
+  e.preventDefault();
+
+  var dt = e.dataTransfer;
+  var files = dt.files;
+  if(files.length>0)
+  {
+	handleFiles(files);
+  }
+  else
+  if(dt.getData('URL'))
+  {
+	qrcode.decode(dt.getData('URL'));
+  }
+}
+
+function handleFiles(f)
+{
+	var o=[];
+	
+	for(var i =0;i<f.length;i++)
+	{
+        var reader = new FileReader();
+        reader.onload = (function(theFile) {
+        return function(e) {
+            gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+
+			qrcode.decode(e.target.result);
+        };
+        })(f[i]);
+        reader.readAsDataURL(f[i]);	
+    }
+}
+
+function initCanvas(w,h)
+{
+    gCanvas = document.getElementById("qr-canvas");
+    gCanvas.style.width = w + "px";
+    gCanvas.style.height = h + "px";
+    gCanvas.width = w;
+    gCanvas.height = h;
+    gCtx = gCanvas.getContext("2d");
+    gCtx.clearRect(0, 0, w, h);
+}
+
+
+function captureToCanvas() {
+    if(stype!=1)
+        return;
+    if(gUM)
+    {
+        try{
+            gCtx.drawImage(v,0,0);
+            try{
+                qrcode.decode();
+            }
+            catch(e){       
+                console.log(e);
+                setTimeout(captureToCanvas, 500);
+            };
+        }
+        catch(e){       
+                console.log(e);
+                setTimeout(captureToCanvas, 500);
+        };
+    }
+}
+
+function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function read(a)
+{
+    var html="<br>";
+document.getElementById("result").innerHTML="<a onClick=gtag('event', 'click', { event_category: 'Qr-Code-Scan-Page',event_action: 'Qr-Code-Scan-Page-View-Menu-Btn-Clicked', event_label: 'Qr-Code-Scan-Page-View-Menu'}); target='_blank' class='btn btn-success btn-lg rounded-0' href='http://"+a+"'>Continue <i class='fa fa-chevron-right' aria-hidden='true'></i> </a><br>";
+    //    html+="<a target='_blank' href='https://"+a+"'>"+a+"</a><br>";
+   // html+="<b>"+htmlEntities(a)+"</b><br><br>";
+
+}	
+
+function isCanvasSupported(){
+  var elem = document.createElement('canvas');
+  return !!(elem.getContext && elem.getContext('2d'));
+}
+function success(stream) 
+{
+
+    v.srcObject = stream;
+    v.play();
+
+    gUM=true;
+    setTimeout(captureToCanvas, 500);
+}
+		
+function error(error)
+{
+    gUM=false;
+    return;
+}
+
+function load()
+{
+	if(isCanvasSupported() && window.File && window.FileReader)
+	{
+		initCanvas(800, 600);
+		qrcode.callback = read;
+		document.getElementById("mainbody").style.display="inline";
+        setwebcam();
+	}
+	else
+	{
+		document.getElementById("mainbody").style.display="inline";
+		document.getElementById("mainbody").innerHTML='<p id="mp1">QR code scanner for HTML5 capable browsers</p><br>'+
+        '<br><p id="mp2">sorry your browser is not supported</p><br><br>'+
+        '<p id="mp1">try <a href="http://www.mozilla.com/firefox"><img src="firefox.png"/></a> or <a href="http://chrome.google.com"><img src="chrome_logo.gif"/></a> or <a href="http://www.opera.com"><img src="Opera-logo.png"/></a></p>';
+	}
+}
+
+function setwebcam()
+{
+	
+	var options = true;
+	if(navigator.mediaDevices && navigator.mediaDevices.enumerateDevices)
+	{
+		try{
+			navigator.mediaDevices.enumerateDevices()
+			.then(function(devices) {
+			  devices.forEach(function(device) {
+				if (device.kind === 'videoinput') {
+				  options={'deviceId': {'exact':device.deviceId}, 'facingMode':'environment'} ;
+					
+				}
+				
+				console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
+			  });
+			  setwebcam2(options);
+			});
+		}
+		catch(e)
+		{
+			console.log(e);
+		}
+	}
+	else{
+		console.log("no navigator.mediaDevices.enumerateDevices" );
+		setwebcam2(options);
+	}
+	
+}
+
+function setwebcam2(options)
+{
+	console.log(options);
+	document.getElementById("result").innerHTML="- scanning -";
+    if(stype==1)
+    {
+        setTimeout(captureToCanvas, 500);    
+        return;
+    }
+    var n=navigator;
+    document.getElementById("outdiv").innerHTML = vidhtml;
+    v=document.getElementById("v");
+
+
+    if(n.mediaDevices.getUserMedia)
+    {
+        n.mediaDevices.getUserMedia({video: options, audio: false}).
+            then(function(stream){
+                success(stream);
+            }).catch(function(error){
+                error(error)
+            });
+    }
+    else
+    if(n.getUserMedia)
+	{
+		webkit=true;
+        n.getUserMedia({video: options, audio: false}, success, error);
+	}
+    else
+    if(n.webkitGetUserMedia)
+    {
+        webkit=true;
+        n.webkitGetUserMedia({video:options, audio: false}, success, error);
+    }
+
+    document.getElementById("qrimg").style.opacity=0.2;
+    document.getElementById("webcamimg").style.opacity=1.0;
+
+    stype=1;
+    setTimeout(captureToCanvas, 500);
+}
+
+function setimg()
+{
+	document.getElementById("result").innerHTML="";
+    if(stype==2)
+        return;
+    document.getElementById("outdiv").innerHTML = imghtml;
+    //document.getElementById("qrimg").src="qrimg.png";
+    //document.getElementById("webcamimg").src="webcam2.png";
+    document.getElementById("qrimg").style.opacity=1.0;
+    document.getElementById("webcamimg").style.opacity=0.2;
+    var qrfile = document.getElementById("qrfile");
+    qrfile.addEventListener("dragenter", dragenter, false);  
+    qrfile.addEventListener("dragover", dragover, false);  
+    qrfile.addEventListener("drop", drop, false);
+    stype=2;
+}
+</script>
+
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108002404-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-108002404-1');
+	</script>
+	
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-white px-1">
+<a class="btn  btn-light  border-0 rounded-0" href="http://www.fudiluv.com/home" onclick="gtag('event', 'click', { event_category: 'Qr-Code-Scan-Page',event_action: 'Qr-Code-Scan-Page-Back-Btn-Clicked', event_label: 'Qr-Code-Scan-Page-Back-Btn'});" ><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    <a class="navbar-brand logo" rel="nofollow" href="http://www.bellview.in" onclick="gtag('event', 'click', { event_category: 'Qr-Code-Scan-Page',event_action: 'Qr-Code-Scan-Page-Logo-Clicked', event_label: 'Qr-Code-Scan-Page-Logo'});">Scan QR Code</a>
+	<span class="pull-right">
+	<a class="btn btn-white border-0 rounded-0" href="#" >&nbsp;</a>
+	</span>						
+</nav>
+
+<div id="main">
+<div id="header">
+
+
+<a class="btn btn-secondary rounded-0" href="qr-code-scan.html" onClick="gtag('event', 'click', { event_category: 'Qr-Code-Scan-Page',event_action: 'Switch-to-back-camera-clicked', event_label: 'Switch-to-back-camera'});"><i class="fa fa-refresh" aria-hidden="true"></i> Switch to back <i class="fa fa-camera" aria-hidden="true"></i> camera</a>
+</div>
+<div id="mainbody">
+<table class="tsel" border="0" width="100%">
+<tr>
+<td valign="top" align="center" width="50%">
+<table class="tsel" border="0">
+<tr>
+<td><div id="webcamimg"></div></td>
+<td><div id="qrimg"></div></td></tr>
+<tr><td colspan="2" align="center">
+<div id="outdiv">
+</div></td></tr>
+</table>
+</td>
+</tr>
+
+<tr><td colspan="3" align="center">
+<div id="result"></div>
+</td></tr>
+</table>
+
+</div>&nbsp;
+
+
+</div>
+<canvas id="qr-canvas" width="800" height="600"></canvas>
+<script type="text/javascript">load();</script>
+</body>
+
+</html>

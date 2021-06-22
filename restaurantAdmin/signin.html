@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link rel=apple-touch-icon href="../assets/images/titlelogo.png">
+  <link rel="shortcut icon" type="image/ico" href="../assets/images/titlelogo.png"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BellView | Sign In</title>
+  <link rel="stylesheet" href="../assets/log/fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="../assets/log/css/style.css">
+  <style>
+    
+    #log{
+     width: 13%;
+     
+   }
+   
+   @media only screen and (max-width: 48em) {
+    
+    #log{
+     width: 13%;
+   } 
+   
+ }
+ @media only screen and (max-width: 39.375em) {
+  #log{
+   width: 65%;
+   margin-left: -25px;
+   
+ } 
+ .signin-form{
+  margin-top: -50px;
+}
+}
+
+
+
+.submit {
+  width: auto;
+  background-color: #3a518d !important;
+  color: #fff;
+  padding: 3px 20px;
+  font-size: 13px;
+  margin-right: 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+}
+</style>
+<link rel="stylesheet" href="../assets/R_Menu/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<link href="../assets/caro/css/resCarousel.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  
+  <div class="container">
+    <header style="position: fixed;
+    top: 0px;z-index: 999;justify-content: center;
+    align-items: center;
+    display: flex;background-color:white;-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);">
+    <div class="logo" >
+     <img src="../assets/images/white91.png" class="log" id="log"/>
+   </div>
+   
+ </header>
+ 
+ 
+ <div class="clearfix"> </div>
+</div>
+<div class="main" style="margin-top: -75px">
+  <section class="sign-in">
+    <div class="container">
+      <div class="signin-content">
+        <div class="signin-form">
+          <h2 class="form-title">Sign in</h2>
+          <form id="image_form" >
+            <div class="form-group">
+              <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+              <input type="text" name="resemail" id="resemail" placeholder="Your Email Adress"  autocomplete="off"/>
+            </div>
+            <div class="form-group">
+              <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+              <input type="password" name="respwd" id="respwd" placeholder="Password"  autocomplete="off"/>
+            </div>
+            <div class="form-group form-button">
+              <input type="submit"  name="but_submit" id="but_submit"  class="form-submit" value="Log in"/>
+            </div>
+          </form>
+          
+        </div>
+        
+        <div class="signin-image" style="display: block;margin: auto;">
+          <figure><img src="../assets/log/images/signin-image.jpg" alt="sing up image"></figure>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- JS -->
+<script src="../assets/log/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/log/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#but_submit").click(function(){
+     var username=$("#resemail").val();
+     var password=$("#respwd").val();
+     if(username!="" && password!="")
+     {
+       var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+       if(re.test(username)==1)
+       {
+//  $("#loading_spinner").css({"display":"block"});
+$.ajax({
+  url:'php/adminLogin.php',
+  type:'post',
+  data:{username:username,password:password},
+  success:function(response){
+    if(response == 1){
+                        //alert("Logined");
+                        window.location = "index.php";
+                      }else{
+                       alert("Invalid username and password!");
+                     }
+                    //$("#message").html(msg);
+                  }
+                });
+}
+else{
+ alert("Enter email properly");
+}
+}
+
+else
+{
+  alert("Please Fill All The Details");
+}
+
+return false;
+});
+  });
+  
+</script>

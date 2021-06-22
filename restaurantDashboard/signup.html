@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+      <link rel=apple-touch-icon href="../assets/images/titlelogo.png">
+        <link rel="shortcut icon" type="image/ico" href="../assets/images/titlelogo.png"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BellView | Sign Up</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/log/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    
+    <link rel="stylesheet" href="../assets/log/css/style.css">
+    <style>
+    .avatar-upload {
+  position: relative;
+  max-width: 205px;
+  margin: 50px auto;
+}
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+  top: 10px;
+}
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+.avatar-upload .avatar-edit input + label {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+    margin-left: -55px;
+    margin-top: 20px;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover {
+  background: #f1f1f1;
+  border-color: #d6d6d6;
+}
+.avatar-upload .avatar-edit input + label:after {
+  content: "\f040";
+  font-family: 'FontAwesome';
+  color: #757575;
+  position: absolute;
+  top: 0px;
+  left: 0;
+font-size: 20px;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+.avatar-upload .avatar-preview {
+  width: 120px;
+  height: 120px;
+    
+  position: relative;
+  border-radius: 100%;
+  border: 6px solid #F8F8F8;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.avatar-upload .avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+ #log{
+     width: 13%;
+        
+        
+    } 
+        
+         @media only screen and (max-width: 48em) {
+            
+            #log{
+     width: 13%;
+    } 
+            
+        }
+@media only screen and (max-width: 39.375em) {
+    #log{
+     width: 65%;
+        margin-left: -25px;
+        
+    } 
+        
+    .signup-form{
+        margin-top: -60px;
+    }
+    .avatar-upload{
+        margin-top: -20px;
+    }
+    
+    
+    
+        }
+        
+        
+       
+.submit {
+  width: auto;
+  background-color: #3a518d !important;
+  color: #fff;
+  padding: 3px 20px;
+  font-size: 13px;
+    margin-right: 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+         text-decoration: none;
+         }
+
+
+
+
+         .buttonload {
+  
+  display: inline-block;
+  background: #6dabe4;
+  color: #fff;
+  border: none; /* Remove borders */
+  width: auto;
+  padding: 15px 39px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
+
+
+input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: MediumSeaGreen;
+  border-color: MediumSeaGreen;
+  color: #fff;
+}
+
+input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+    </style>
+    <link rel="stylesheet" href="../assets/R_Menu/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<link href="../assets/caro/css/resCarousel.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+        <header style="position: fixed;
+  top: 0px;z-index: 999;justify-content: center;
+    align-items: center;
+  display: flex;background-color:white;-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  
+                   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);">
+   <div class="logo" >
+     <img src="../assets/images/white91.png" class="log" id="log"/>
+  </div>
+           <a href="signin.html" class="submit">Login</a>   
+</header>
+			
+			
+			<div class="clearfix"> </div>
+		</div>
+    <div class="main" style="margin-top: -75px">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form id="image_form" method="post" enctype="multipart/form-data">
+                          <div >
+                            <div class="avatar-upload" style="display: flex;justify-content: center;">
+                              <div class="avatar-edit">
+                                <input type='file' id="imageUpload" name="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="action" id="action" value="insert" />
+                                <label for="imageUpload" ></label>
+                              </div>
+                              <div class="avatar-preview" >
+                                <div id="imagePreview" style="background-image: url(../assets/images/icon/uploadimg.png);">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                              <input type="text" name="res_name" id="res_name" placeholder="Name of Restaurant" maxlength=35 autocomplete="off" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="res_adr" id="res_adr" placeholder="Adress" maxlength=80 autocomplete="off"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="res_pin" id="res_pin" placeholder="Pincode" maxlength=6 onkeypress="return event.charCode >= 48 && event.charCode <= 57" autocomplete="off"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="res_contact" id="res_contact" placeholder="Your Contact No." maxlength=10 onkeypress="return event.charCode >= 48 && event.charCode <= 57" autocomplete="off"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="res_tables" id="res_tables" placeholder="No. of Tables" maxlength=2 onkeypress="return event.charCode >= 48 && event.charCode <= 57" autocomplete="off"/>
+                                <input type="hidden" name="res_time" id="res_time" value="0" />
+                                <input type="hidden" name="res_cat" id="res_cat" value="0" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="res_email" id="res_email" placeholder="Your Email" maxlength=30 autocomplete="off"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="res_pwd" id="res_pwd" placeholder="Password" maxlength=6 autocomplete="off"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="res_repwd" id="res_repwd" placeholder="Repeat your password" maxlength=6 autocomplete="off"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="res_gst" id="res_gst" placeholder="Enter the GST No." maxlength=20 autocomplete="off"/>
+                            </div>
+                            <div class="form-group"> 
+                             
+                                <p><input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term" style="font-size: 12px !important; ">
+                                   I agree all statements in  <a href="terms_and_conditons.html" class="term-service" style="font-size: 12px !important; " target="_blank">Terms of service</a> </label></p>
+                            </div>
+                            <div class="form-group form-button" id="subtn">
+                                <input type="submit" name="insert" id="insert" class="form-submit" value="Register"/>
+                            </div>
+                            <div class="form-group form-button" id="Loading">
+                              <button class="buttonload" disabled>
+                                <i class="fa fa-spinner fa-spin"></i>Loading
+                              </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image" style="display: block; margin: auto">
+                        <figure><img src="../assets/log/images/signup-image.jpg" alt="sing up image"></figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../assets/log/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+  
+
+    <script  src="../assets/log/file/js/index.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+<script>  
+
+$('#Loading').hide();
+    $(document).ready(function()
+    {
+        $('#image_form').submit(function(event)
+        {
+            event.preventDefault();
+            var image_name = $('#imageUpload').val();
+            if(image_name == '')
+            {
+                alert("Please Select Image");
+                return false;
+            }
+            else
+            {
+                var extension = $('#imageUpload').val().split('.').pop().toLowerCase();
+                if(jQuery.inArray(extension, ['png','jpg','jpeg']) == -1)
+                {
+                    alert("Invalid Image File");
+                    $('#imageUpload').val('');
+                    return false;
+                }
+                else
+                {
+                    var resname=document.getElementById("res_name").value;
+                    if( resname!= "")
+                    {
+                               var resadr=document.getElementById("res_adr").value;
+                                if( resadr!= "")
+                                {
+                                    var respin=document.getElementById("res_pin").value;
+                                    if( respin!= "")
+                                    {
+                                        if (respin.length ==6) {
+                                            var resph=document.getElementById("res_contact").value;
+                                            if( resph!= "")
+                                            {
+                                                if (resph.length ==10){
+                                                    var restab=document.getElementById("res_tables").value;
+                                                    if( restab!= "")
+                                                    {
+                                                        var resemail=document.getElementById("res_email").value;
+                                                        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                                                        if( resemail!= "")
+                                                        {
+                                                            if(re.test(resemail)==1)
+                                                            {
+                                                                var respwd=document.getElementById("res_pwd").value;
+                                                                var resrepwd=document.getElementById("res_repwd").value;
+                                                                if( respwd!= "")
+                                                                {
+                                                                    if (respwd.length ==6){
+                                                                        if( resrepwd!= "")
+                                                                        {
+                                                                            if (resrepwd.length ==6){
+                                                                                if(respwd==resrepwd)
+                                                                                {
+                                                                                  var resgst=document.getElementById("res_gst").value;
+                                                                                  if( resgst!= "")
+                                                                                  {
+                                                                                    if (($('#agree-term').is(':checked'))) 
+                                                                                    {
+                                                                                      $('#subtn').hide();
+                                                                                      $('#Loading').show();
+                                                                                        $.ajax({
+                                                                                        url:"php/registerRestaurant.php",
+                                                                                        method:"POST",
+                                                                                        data:new FormData(this),
+                                                                                        contentType:false,
+                                                                                        processData:false,
+                                                                                        success:function(data)
+                                                                                        {
+                                                                                          if(data=="Image Inserted into Database")
+                                                                                          {
+                                                                                            $('#Loading').hide();
+                                                                                            $('#subtn').show();
+                                                                                            alert("The Resaturant has been sucessfully Registered");
+                                                                                            $('#image_form')[0].reset();
+                                                                                            window.location.href="signin.html";
+                                                                                            $('#imageModal').modal('hide');
+                                                                                          }
+                                                                                          else{
+                                                                                            $('#Loading').hide();
+                                                                                            $('#subtn').show();
+                                                                                            alert(data);
+                                                                                            $('#image_form')[0].reset();
+                                                                                            $('#imageModal').modal('hide');
+                                                                                          }
+                                                                                        }
+                                                                                      }); 
+                                                                                    }
+                                                                                    else{
+                                                                                        alert("Plase agree term and conditions");
+                                                                                    }
+                                                                                  }else{
+                                                                                    alert("Enter the GST Number.");
+                                                                                  }
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    alert("Password is mismatch");
+                                                                                }
+                                                                            }
+                                                                            else{
+                                                                                alert("Enter 6 digit password");
+                                                                            }
+                                                                        }
+                                                                        else{
+                                                                            alert("Enter the password");
+                                                                        }
+                                                                    }
+                                                                    else{
+                                                                        alert("Enter 6 digit password");
+                                                                    }
+                                                                }
+                                                                else{
+                                                                    alert("Enter the password");
+                                                                }
+                                                            }
+                                                            else{
+                                                                alert("Enter email properly");
+                                                            }
+                                                        }
+                                                        else{
+                                                            alert("Enter the email address");
+                                                        }
+                                                    }
+                                                    else{
+                                                        alert("Enter th no. of tables");
+                                                    }
+                                                }
+                                                else{
+                                                    alert("The phone number should be 10 digit");
+                                                }
+                                            }
+                                            else{
+                                                alert("Enter your phone number");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            alert("Pincode should be 6");
+                                        }
+                                    }
+                                    else{
+                                        alert("Please enter the pincode");
+                                    }
+                                }
+                                else
+                                {
+                                    alert("Please enter your address");
+                                }
+                            
+                    }
+                        
+                    else
+                    {
+                        alert("Please enter your name");
+                    }
+                    
+                }
+            }
+        });
+    });  
+</script>
